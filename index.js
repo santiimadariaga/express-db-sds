@@ -1,10 +1,25 @@
-const express = require("express");
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import { usersRouter } from './router/Router.js';
+import cors from 'cors';
+
+const port = process.env.PORT || 8001;
+
 const app = express();
-const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => res.type('html').send(html));
+app.use(express.json());
 
-const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.use(cors());
+
+app.use(cookieParser());
+
+app.use('/db', usersRouter);
+
+app.get('/', (req, res) => res.type('html').send(html));
+
+const server = app.listen(port, () =>
+  console.log(`App listening on port ${port}!`)
+);
 
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
@@ -54,8 +69,8 @@ const html = `
   </head>
   <body>
     <section>
-      Hello from Render!
+      Hello from Seguridad del Sol!
     </section>
   </body>
 </html>
-`
+`;
