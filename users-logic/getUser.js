@@ -3,7 +3,7 @@ import { compare } from '../helpers/handleBcrypt.js';
 
 const db = new PrismaClient();
 
-export async function loginUser(email, password) {
+export async function getUser(email, password) {
   try {
     const findUser = await db.users.findMany({
       where: {

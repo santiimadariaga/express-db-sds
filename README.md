@@ -9,9 +9,9 @@ Backend of a Landing Page created with:
 - [Bcryptjs](https://www.npmjs.com/package/bcryptjs).
 - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken).
 
-# Take a look at the Backend of the project 👀
+# Take a look at the Frontend of the project 👀
 
-- [Repository](https://github.com/santiimadariaga/express-db-sds)
+- [Repository](https://github.com/santiimadariaga/seguridad-del-sol)
 
 # README
 
