@@ -13,6 +13,12 @@ Backend of a Landing Page created with:
 
 - [Repository](https://github.com/santiimadariaga/seguridad-del-sol)
 
+# Endpoints
+/register, POST: Registro de Usuarios
+/login, POST: Inicio de Sesion de Usuarios con autenticación
+/users, GET: Get de todos los usuarios
+/users/:id, DELETE: Eliminar un usuario por id
+
 # README
 
 This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
