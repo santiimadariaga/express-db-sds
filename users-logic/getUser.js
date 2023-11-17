@@ -5,6 +5,7 @@ const db = new PrismaClient();
 
 export async function getUser(email, password) {
   try {
+    // console.log(email, password);
     const findUser = await db.users.findMany({
       where: {
         email: email,
@@ -27,7 +28,10 @@ export async function getUser(email, password) {
       },
     });
 
+    // console.log(findUser);
+
     const compareHash = await compare(password, findUser[0].password);
+    // console.log(compareHash);
 
     if (compareHash) {
       // INICIO DE SESION OK

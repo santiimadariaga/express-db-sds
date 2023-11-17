@@ -1,6 +1,7 @@
 import { getUsers } from '../users-logic/getUsers.js';
 import { createUser } from '../users-logic/createUser.js';
 import { deleteUser } from '../users-logic/deleteUser.js';
+import { getUserByToken } from '../users-logic/getUserByToken.js';
 
 export const getAllUsersController = async (req, res) => {
   try {
@@ -8,7 +9,19 @@ export const getAllUsersController = async (req, res) => {
     console.log('Users: ', result);
     res.json(result);
   } catch (error) {
-    console.log('Error in controller: ', error);
+    console.log('Error in controller 1: ', error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const getUserByTokenController = async (req, res) => {
+  try {
+    const { token } = req.body;
+    console.log('Token in controller: ', token);
+    const result = await getUserByToken(token);
+    res.json(result);
+  } catch (error) {
+    console.log('Error in controller 2: ', error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -21,7 +34,7 @@ export const createUserController = async (req, res) => {
     res.json(newUser);
     return newUser;
   } catch (error) {
-    console.log('Error in controller: ', error);
+    console.log('Error in controller 3: ', error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -33,7 +46,7 @@ export const deleteUserController = async (req, res) => {
     console.log(`User deleted: `, id);
     res.json({ message: `User ${id} deleted successfully.` });
   } catch (error) {
-    console.log('Error in controller: ', error);
+    console.log('Error in controller 4: ', error);
     res.status(500).json({ message: error.message });
   }
 };

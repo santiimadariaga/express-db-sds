@@ -10,7 +10,8 @@ usersRouter.post('/register', controllers.createUserController);
 // login
 usersRouter.post('/login', authController);
 
-// gral
-usersRouter.get('/users', controllers.getAllUsersController);
+// user
+usersRouter.post('/userByToken', controllers.getUserByTokenController);
 usersRouter.delete('/user/:id', controllers.deleteUserController);
+usersRouter.get('/users', controllers.getAllUsersController);
 // usersRouter.put('/login', controllers.getAllUsersController);

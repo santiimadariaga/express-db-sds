@@ -1,4 +1,3 @@
-import { promisify } from 'util';
 import { getUser } from '../users-logic/getUser.js';
 import jwt from 'jsonwebtoken';
 
@@ -8,9 +7,9 @@ export const authController = async (req, res) => {
     const user = await getUser(email, password);
 
     // JWT Logic
-    const { id: userId, email: userEmail } = user[0];
+    const { id: userId, email: userEmail, name: userName } = user[0];
     const token = jwt.sign(
-      { userId: userId, email: userEmail },
+      { userId: userId, email: userEmail, name: userName },
       process.env.JWT_SECRET,
       {
         expiresIn: process.env.JWT_TIME_EXPIRES,
