@@ -17,9 +17,8 @@ export const getAllUsersController = async (req, res) => {
 export const getUserByTokenController = async (req, res) => {
   try {
     const { token } = req.body;
-    console.log('Token in controller: ', token);
     const result = await getUserByToken(token);
-    res.json(result);
+    res.send(result?.name);
   } catch (error) {
     console.log('Error in controller 2: ', error);
     res.status(500).json({ message: error.message });
