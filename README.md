@@ -14,10 +14,12 @@ Backend of a Landing Page created with:
 - [Repository](https://github.com/santiimadariaga/seguridad-del-sol)
 
 # Endpoints
+
 /register, POST: Registro de Usuarios\
 /login, POST: Inicio de Sesion de Usuarios con autenticación\
-/users, GET: Get de todos los usuarios\
-/users/:id, DELETE: Eliminar un usuario por id\
+/users, GET: Traer todos los usuarios\
+/user/:id, DELETE: Eliminar un usuario por id\
+/userByToken, POST: Trae al usuario encontrado mediante el token
 
 # README
 
